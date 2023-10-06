@@ -1,0 +1,6 @@
+.errorlist{
+  color: red;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.chat_area.show{display: block !important;}
