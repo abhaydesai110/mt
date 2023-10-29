@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Interior from "../Components/Interior";
+import Exterior from "../Components/Exterior";
+import Garden from "../Components/Garden";
+import Floorplangenration from "../Components/Floorplangenration";
 
 const MegaMenu = () => {
+  const [page, setPage] = useState(1);
   return (
     <div>
       <div className="main relative bg-[#090E1A] pt-24">
@@ -121,23 +125,43 @@ const MegaMenu = () => {
             Generator
           </h2>
           <ul id="tabs-nav" className="w-full flex flex-wrap justify-center">
-            <li className="g_btn">
-              <Link to="inteior" className="anim">
+            <li
+              className="g_btn"
+              onClick={() => {
+                setPage(1);
+              }}
+            >
+              <Link to="" className="anim">
                 Inteior
               </Link>
             </li>
-            <li className="g_btn">
-              <Link to="exteior" className="anim">
+            <li
+              className="g_btn"
+              onClick={() => {
+                setPage(2);
+              }}
+            >
+              <Link to="" className="anim">
                 Exteior
               </Link>
             </li>
-            <li className="g_btn">
-              <Link to="garden" className="anim">
+            <li
+              className="g_btn"
+              onClick={() => {
+                setPage(3);
+              }}
+            >
+              <Link to="" className="anim">
                 Garden
               </Link>
             </li>
-            <li className="g_btn">
-              <Link to="floorplangenration" className="anim">
+            <li
+              className="g_btn"
+              onClick={() => {
+                setPage(4);
+              }}
+            >
+              <Link to="" className="anim">
                 Floor plan Genration
               </Link>
             </li>
@@ -148,7 +172,11 @@ const MegaMenu = () => {
           >
             <div className="flex flex-wrap -mx-5">
               <div className="w-full md:w-1/2 p-5 md:py-6 max-w-2xl mx-auto">
-                <div id="inteior" className="droplist w-full hidden">
+                {page === 1 && <Interior />}
+                {page === 2 && <Exterior />}
+                {page === 3 && <Garden />}
+                {page === 4 && <Floorplangenration />}
+                {/* <div id="inteior" className="droplist w-full hidden">
                   <form
                     action=""
                     id="inteiorform"
@@ -654,7 +682,7 @@ const MegaMenu = () => {
                       </div>
                     </div>
                   </form>
-                </div>
+                </div> */}
               </div>
               {/* <!-- privew section  --> */}
               <div

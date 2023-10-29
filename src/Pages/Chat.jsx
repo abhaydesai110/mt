@@ -24,7 +24,7 @@ const Chat = () => {
                   className="scale-0 anim bg-[#131622]/90 py-20 p-10 fixed inset-0 w-full h-full md:scale-100 md:py-0 md:p-0 flex items-center justify-center md:bg-transparent md:relative md:block"
                 >
                   <span
-                    onclick="removeActive('#nav','open');"
+                    onClick="removeActive('#nav','open');"
                     id="close_pop"
                     className="absolute top-7 right-7 inline-block md:hidden w-8 h-8 anim z-20"
                   >
@@ -84,7 +84,7 @@ const Chat = () => {
                   </ul>
                 </nav>
                 <div className="block md:hidden">
-                  <button onclick="addActive('#nav','open');" className="anim">
+                  <button onClick="addActive('#nav','open');" className="anim">
                     <svg
                       className="w-10 h-10"
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,12 +122,12 @@ const Chat = () => {
           <div id="chat_holder" className="chat_holder max-w-7xl mx-auto">
             <span
               className="dropcover anim"
-              onclick="removeActive('#chat_holder','open');"
+              onClick="removeActive('#chat_holder','open');"
             ></span>
             {/* <!-- char left-bar  --> */}
             <div className="sidebar anim">
               <span
-                onclick="removeActive('#chat_holder','open');"
+                onClick="removeActive('#chat_holder','open');"
                 id="close_pop"
                 className="absolute top-3 right-3 md:top-6 md:right-6 inline-block lg:hidden w-6 h-6 anim z-50 cursor-pointer"
               >
@@ -358,7 +358,7 @@ const Chat = () => {
                 <div className="flex items-center">
                   <div className="block lg:hidden mr-2">
                     <button
-                      onclick="addActive('#chat_holder','open');"
+                      onClick="addActive('#chat_holder','open');"
                       className="anim"
                     >
                       <svg
@@ -525,7 +525,7 @@ const Chat = () => {
                     </span>
                     <span
                       className="inline-block cursor-pointer w-5 h-5"
-                      onclick="addActive('#delete','open'); addActive('#edit','close');"
+                      onClick="addActive('#delete','open'); addActive('#edit','close');"
                       id="edit"
                     >
                       <svg
@@ -557,7 +557,7 @@ const Chat = () => {
                     <div className="space-x-2 hidden" id="delete">
                       <span
                         className="inline-block cursor-pointer w-5 h-5"
-                        onclick="removeActive('#delete','open'); removeActive('#edit','close');"
+                        onClick="removeActive('#delete','open'); removeActive('#edit','close');"
                       >
                         <svg
                           className="w-full h-full fill-blue-600"

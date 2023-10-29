@@ -23,7 +23,7 @@ const ContactUs = () => {
                   className="scale-0 anim bg-[#131622]/90 py-20 p-10 fixed inset-0 w-full h-full md:scale-100 md:py-0 md:p-0 flex items-center justify-center md:bg-transparent md:relative md:block"
                 >
                   <span
-                    onclick="removeActive('#nav','open');"
+                    onClick="removeActive('#nav','open');"
                     id="close_pop"
                     className="absolute top-7 right-7 inline-block md:hidden w-8 h-8 anim z-20"
                   >
@@ -83,7 +83,7 @@ const ContactUs = () => {
                   </ul>
                 </nav>
                 <div className="block md:hidden">
-                  <button onclick="addActive('#nav','open');" className="anim">
+                  <button onClick="addActive('#nav','open');" className="anim">
                     <svg
                       className="w-10 h-10"
                       xmlns="http://www.w3.org/2000/svg"

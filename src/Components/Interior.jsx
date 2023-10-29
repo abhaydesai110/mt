@@ -3,8 +3,9 @@ import React from "react";
 const Interior = () => {
   return (
     <div>
+      <h1 className="text-4xl my-5 font-bold text-center  text-white">INTERIOR</h1>
       {" "}
-      <div id="inteior" className="droplist w-full hidden">
+      <div id="inteior" className="droplist w-full ">
         <form action="" id="inteiorform" name="InteiorForm" method="post">
           <div className="flex justify-center flex-wrap">
             <div className="p-2 w-full mb-5">

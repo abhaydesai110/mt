@@ -76,7 +76,7 @@ particlesJS('particles-js',
           "enable": true,
           "mode": "repulse"
         },
-        "onclick": {
+        "onClick": {
           "enable": true,
           "mode": "push"
         },

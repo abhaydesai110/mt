@@ -23,7 +23,7 @@ const Gallery = () => {
                   className="scale-0 anim bg-[#131622]/90 py-20 p-10 fixed inset-0 w-full h-full md:scale-100 md:py-0 md:p-0 flex items-center justify-center md:bg-transparent md:relative md:block"
                 >
                   <span
-                    onclick="removeActive('#nav','open');"
+                    onClick="removeActive('#nav','open');"
                     id="close_pop"
                     className="absolute top-7 right-7 inline-block md:hidden w-8 h-8 anim z-20"
                   >
@@ -82,7 +82,7 @@ const Gallery = () => {
                   </ul>
                 </nav>
                 <div className="block md:hidden">
-                  <button onclick="addActive('#nav','open');" className="anim">
+                  <button onClick="addActive('#nav','open');" className="anim">
                     <svg
                       className="w-10 h-10"
                       xmlns="http://www.w3.org/2000/svg"
@@ -1562,7 +1562,7 @@ const Gallery = () => {
         id="image_privew_modal"
         className="modal_main invisible scale-0 anim"
       >
-        <span className="absolute top-8 right-8 cursor-pointer" onclick="">
+        <span className="absolute top-8 right-8 cursor-pointer" >
           <svg
             className="w-7 h-7 fill-white"
             xmlns="http://www.w3.org/2000/svg"
