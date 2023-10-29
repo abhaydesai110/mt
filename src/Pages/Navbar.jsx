@@ -55,9 +55,15 @@ const Navbar = () => {
                   </svg>
                 </span>
                 <ul className="md:flex items-center space-y-6 md:space-y-0 md:gap-8 text-sm">
-                  <li className="relative group text-white text-white text-center md:text-left">
+                  {/* <li className="relative group text-white text-white text-center md:text-left">
                     <Link className="nav_link" to="chat">
                       Chat
+                    </Link>
+                    <span className="list_border anim"></span>
+                  </li> */}
+                  <li className="relative group text-white text-center md:text-left">
+                    <Link className="nav_link" to="megamenu">
+                      Mega Menu
                     </Link>
                     <span className="list_border anim"></span>
                   </li>
@@ -76,12 +82,6 @@ const Navbar = () => {
                   <li className="relative group text-white text-center md:text-left">
                     <Link className="nav_link" to="profile">
                       Profile
-                    </Link>
-                    <span className="list_border anim"></span>
-                  </li>
-                  <li className="relative group text-white text-center md:text-left">
-                    <Link className="nav_link" to="megamenu">
-                      Mega Menu
                     </Link>
                     <span className="list_border anim"></span>
                   </li>

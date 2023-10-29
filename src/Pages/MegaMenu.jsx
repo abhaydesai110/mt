@@ -1,4 +1,6 @@
 import React from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import Interior from "../Components/Interior";
 
 const MegaMenu = () => {
   return (
@@ -120,24 +122,24 @@ const MegaMenu = () => {
           </h2>
           <ul id="tabs-nav" className="w-full flex flex-wrap justify-center">
             <li className="g_btn">
-              <a href="#inteior" className="anim">
+              <Link to="inteior" className="anim">
                 Inteior
-              </a>
+              </Link>
             </li>
             <li className="g_btn">
-              <a href="#exteior" className="anim">
+              <Link to="exteior" className="anim">
                 Exteior
-              </a>
+              </Link>
             </li>
             <li className="g_btn">
-              <a href="#garden" className="anim">
+              <Link to="garden" className="anim">
                 Garden
-              </a>
+              </Link>
             </li>
             <li className="g_btn">
-              <a href="#floorplangenration" className="anim">
+              <Link to="floorplangenration" className="anim">
                 Floor plan Genration
-              </a>
+              </Link>
             </li>
           </ul>
           <div
@@ -205,8 +207,7 @@ const MegaMenu = () => {
                           id="inteior_mainlist"
                         >
                           <option disabled defaultValue value>
-                            {" "}
-                            -- select an option --{" "}
+                            -- select an option --
                           </option>
                           <option value="Home">Home</option>
                           <option value="Commercial">Commercial</option>
@@ -219,8 +220,7 @@ const MegaMenu = () => {
                           id="home_list"
                         >
                           <option disabled defaultValue value>
-                            {" "}
-                            -- select for Home --{" "}
+                            -- select for Home --
                           </option>
                           <option value="Living Room">Living Room</option>
                           <option value="Kitchen">Kitchen</option>
