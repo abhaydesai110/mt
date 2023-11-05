@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useUser } from "../Redux/Slices/AuthSlices";
 
 const Navbar = () => {
+  const { user } = useUser();
+  const token = user.accessToken;
+
+  useEffect(() => {}, [!token]);
+
   return (
     <div>
       <header className="w-full absolute  inset-x-0 top-0 z-50">
@@ -22,7 +28,7 @@ const Navbar = () => {
                 className="scale-0 anim bg-[#131622]/90 py-20 p-10 fixed inset-0 w-full h-full md:py-0 md:p-0 flex items-center justify-center md:scale-100 md:bg-transparent md:relative md:block"
               >
                 <span
-                  onClick="removeActive('#nav','open');"
+                  // onClick="removeActive('#nav','open');"
                   id="close_pop"
                   className="absolute top-7 right-7 inline-block md:hidden w-8 h-8 anim z-20"
                 >
@@ -79,24 +85,32 @@ const Navbar = () => {
                     </Link>
                     <span className="list_border anim"></span>
                   </li>
-                  <li className="relative group text-white text-center md:text-left">
-                    <Link className="nav_link" to="profile">
-                      Profile
-                    </Link>
-                    <span className="list_border anim"></span>
-                  </li>
+                  {token && (
+                    <>
+                      <li className="relative group text-white text-center md:text-left">
+                        <Link className="nav_link" to="profile">
+                          Profile
+                        </Link>
+                        <span className="list_border anim"></span>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </nav>
               <div className="space-x-3 flex">
                 <Link to="register" className="btn-primary anim">
                   Registration
                 </Link>
-                <Link to="login" className="btn-primary anim">
-                  Login
-                </Link>
+                {!token && (
+                  <>
+                    <Link to="login" className="btn-primary anim">
+                      Login
+                    </Link>
+                  </>
+                )}
               </div>
               <div className="block md:hidden">
-                <button onClick="addActive('#nav','open');" className="anim">
+                <button className="anim">
                   <svg
                     className="w-10 h-10"
                     xmlns="http://www.w3.org/2000/svg"

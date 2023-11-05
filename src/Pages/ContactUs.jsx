@@ -97,7 +97,6 @@ const ContactUs = () => {
                       viewBox="0 0 24 24"
                       style={{ enableBackground: "new 0 0 512 512" }}
                       xmlSpace="preserve"
-                      classNamea=""
                     >
                       <g>
                         <path
@@ -261,7 +260,6 @@ const ContactUs = () => {
                       viewBox="0 0 512 512"
                       style={{ enableBackground: "new 0 0 512 512" }}
                       xmlSpace="preserve"
-                      classNamea=""
                     >
                       <g>
                         <g data-name="Layer 2">
@@ -315,7 +313,6 @@ const ContactUs = () => {
                       viewBox="0 0 484 484"
                       style={{ enableBackground: "new 0 0 512 512" }}
                       xmlSpace="preserve"
-                      classNamea=""
                     >
                       <g>
                         <path
@@ -349,7 +346,6 @@ const ContactUs = () => {
                       viewBox="0 0 176.368 176.368"
                       style={{ enableBackground: "new 0 0 512 512" }}
                       xmlSpace="preserve"
-                      classNamea=""
                     >
                       <g>
                         <path
@@ -673,7 +669,6 @@ const ContactUs = () => {
             viewBox="0 0 24 24"
             style={{ enableBackground: "new 0 0 512 512" }}
             xmlSpace="preserve"
-            classNamea=""
           >
             <g>
               <path

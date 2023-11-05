@@ -122,12 +122,12 @@ const Chat = () => {
           <div id="chat_holder" className="chat_holder max-w-7xl mx-auto">
             <span
               className="dropcover anim"
-              onClick="removeActive('#chat_holder','open');"
+              // onClick="removeActive('#chat_holder','open');"
             ></span>
             {/* <!-- char left-bar  --> */}
             <div className="sidebar anim">
               <span
-                onClick="removeActive('#chat_holder','open');"
+                // onClick="removeActive('#chat_holder','open');"
                 id="close_pop"
                 className="absolute top-3 right-3 md:top-6 md:right-6 inline-block lg:hidden w-6 h-6 anim z-50 cursor-pointer"
               >
@@ -358,7 +358,7 @@ const Chat = () => {
                 <div className="flex items-center">
                   <div className="block lg:hidden mr-2">
                     <button
-                      onClick="addActive('#chat_holder','open');"
+                      // onClick="addActive('#chat_holder','open');"
                       className="anim"
                     >
                       <svg
@@ -525,7 +525,7 @@ const Chat = () => {
                     </span>
                     <span
                       className="inline-block cursor-pointer w-5 h-5"
-                      onClick="addActive('#delete','open'); addActive('#edit','close');"
+                      // onClick="addActive('#delete','open'); addActive('#edit','close');"
                       id="edit"
                     >
                       <svg
@@ -557,7 +557,7 @@ const Chat = () => {
                     <div className="space-x-2 hidden" id="delete">
                       <span
                         className="inline-block cursor-pointer w-5 h-5"
-                        onClick="removeActive('#delete','open'); removeActive('#edit','close');"
+                        // onClick="removeActive('#delete','open'); removeActive('#edit','close');"
                       >
                         <svg
                           className="w-full h-full fill-blue-600"

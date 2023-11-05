@@ -57,7 +57,7 @@ const Exterior = () => {
                 className="p-2 md:p-3 px-4 text-sm outline-none rounded-md w-full"
                 name=""
                 id="exteior_mainlist"
-                onclick="exteior_display()"
+                // onclick="exteior_display()"
               >
                 <option disabled defaultValue value>
                   {" "}

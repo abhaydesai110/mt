@@ -4,7 +4,9 @@ const Floorplangenration = () => {
   return (
     <div>
       {" "}
-      <h1 className="text-4xl my-5 font-bold text-center  text-white">FLOOR PLAN GENRATION</h1>
+      <h1 className="text-4xl my-5 font-bold text-center  text-white">
+        FLOOR PLAN GENRATION
+      </h1>
       <div id="floorplangenration" className="droplist w-full ">
         <form
           action=""
