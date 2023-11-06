@@ -3,8 +3,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import { logInUser, useUser } from "../Redux/Slices/AuthSlices";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,6 @@ const Login = () => {
   });
 
   const onSubmit = async (values) => {
-    debugger;
     const payload = Object.assign({}, values);
     console.log("payload", payload);
     try {
@@ -159,6 +158,7 @@ const Login = () => {
                         Sign up
                       </a>
                     </p>
+                    <button onClick={()=>{toast.success("hahaha")}}>asdfasdf</button>
                   </Form>
                 </>
               );

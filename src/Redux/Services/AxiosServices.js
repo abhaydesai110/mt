@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "../../Apis/Baseurl";
+import { toast } from "sonner";
 // import { toast, ToastContainer } from "react-toastify";
 
 export const apiInstance = axios.create({
@@ -21,6 +22,7 @@ apiInstance.interceptors.response.use(
   },
   function (error) {
     console.log(error, "Axios Error ==");
+    toast.error(error?.response?.data?.Message)
     if (!error?.response?.data?.Message) {
     }
     if (error?.response?.data?.code === "E_USER_NOT_FOUND") {

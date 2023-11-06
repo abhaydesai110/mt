@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useUser } from "../Redux/Slices/AuthSlices";
+import { getProfile, useProfile, useUser } from "../Redux/Slices/AuthSlices";
+import { useDispatch } from "react-redux";
+import image from "../../src/assets/images/card9.jpg";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  console.log("navbaar render");
+  const { profile } = useProfile();
+  console.log("profile", profile);
   const { user } = useUser();
-  const token = user.accessToken;
 
-  useEffect(() => {}, [!token]);
+  console.log("user", user);
+  const some = Object.keys(user).length;
+  console.log("some", some);
+  useEffect(() => {
+    dispatch(getProfile());
+  }, []);
 
   return (
     <div>
@@ -85,23 +95,28 @@ const Navbar = () => {
                     </Link>
                     <span className="list_border anim"></span>
                   </li>
-                  {token && (
-                    <>
-                      <li className="relative group text-white text-center md:text-left">
-                        <Link className="nav_link" to="profile">
-                          Profile
-                        </Link>
-                        <span className="list_border anim"></span>
-                      </li>
-                    </>
-                  )}
                 </ul>
               </nav>
               <div className="space-x-3 flex">
                 <Link to="register" className="btn-primary anim">
                   Registration
                 </Link>
-                {!token && (
+                {Object.keys(user).length > 0 ? (
+                  <>
+                    <Link className="nav_link" to="profile">
+                      <div className="flex items-center justify-center space-x-3 cursor-pointer">
+                        <div className="w-10 h-10 border-2 border-white mx-auto rounded-full cursor-pointer bg-[#202934] overflow-hidden relative">
+                          <img
+                            className="w-full h-full cursor-pointer"
+                            src={image}
+                            alt="card7"
+                          />
+                        </div>
+                        <h1>{profile.fname}</h1>
+                      </div>
+                    </Link>
+                  </>
+                ) : (
                   <>
                     <Link to="login" className="btn-primary anim">
                       Login

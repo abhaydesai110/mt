@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getProfile, userProfile } from "../Redux/Slices/AuthSlices";
+import {
+  getProfile,
+  removeToken,
+  useProfile,
+  useUser,
+} from "../Redux/Slices/AuthSlices";
 import { useDispatch } from "react-redux";
 import authHeader from "../Redux/Services/AuthHeadres";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
+import image from "../../src/assets/images/card9.jpg";
 
 const Profile = () => {
+  const user = useUser();
+  const { profile } = useProfile();
+  console.log("profile", profile);
+  console.log("user", user);
   const [renderValues, setRenderValues] = useState(null);
   console.log("renderValues", renderValues);
   const navigate = useNavigate();
@@ -20,19 +30,21 @@ const Profile = () => {
     email: "",
     username: "",
   };
+
   const schemaValidation = Yup.object().shape({
     fname: Yup.string().required(),
     lname: Yup.string().required(),
     email: Yup.string().required(),
     username: Yup.string().required(),
   });
+
   const onSubmit = (values) => {
     console.log("values", values);
   };
 
-  const logOutUser = (e) => {
-    e.preventDefault();
-    localStorage.clear();
+  const logOutUser = async () => {
+    const logOut = dispatch(removeToken());
+    console.log("logOut", logOut);
     navigate("/");
   };
 
@@ -40,7 +52,6 @@ const Profile = () => {
     const response = await dispatch(getProfile());
     if (response?.payload?.data?.IsSuccess) {
       const responseValues = response?.payload?.data?.Data;
-
       const savedValues = {
         fname: responseValues.fname,
         lname: responseValues.lname,
@@ -86,7 +97,7 @@ const Profile = () => {
                         <div className="w-32 h-32 border-2 border-white mx-auto rounded-full bg-[#202934] overflow-hidden relative">
                           <img
                             className="w-full h-full"
-                            src="assest/images/card6.jpg"
+                            src={image}
                             alt="card7"
                           />
                           <input
@@ -276,7 +287,7 @@ const Profile = () => {
                         {isEdit && (
                           <>
                             <button
-                              type="submit"
+                              type="button"
                               className="w-1/2 my-1.5 rounded-lg hover:opacity-80 anim bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                               onClick={() => {
                                 setIsEdit(false);
@@ -305,10 +316,10 @@ const Profile = () => {
                         )}
 
                         <button
-                          type="submit"
+                          type="button"
                           className="w-1/2 my-1.5 rounded-lg hover:opacity-80 anim bg-red-600 px-5 py-3 text-sm font-medium text-white"
-                          onClick={(e) => {
-                            logOutUser(e);
+                          onClick={() => {
+                            logOutUser();
                           }}
                         >
                           Log Out

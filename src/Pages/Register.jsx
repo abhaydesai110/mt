@@ -4,7 +4,7 @@ import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { registration } from "../Redux/Slices/AuthSlices";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -37,9 +37,13 @@ const Register = () => {
       if (response?.payload?.data?.IsSuccess) {
         toast.success(response?.payload?.data?.Message);
         navigate("../login");
+      } else {
       }
-    } catch (error) {}
-    console.log("response", response);
+    } catch (error) {
+      console.log("error", error);
+
+      console.log("response", response);
+    }
   };
 
   return (
@@ -73,6 +77,7 @@ const Register = () => {
                               className="outline-none w-full rounded-lg border-gray-200 p-4 pe-12 text-sm lg:text-base shadow"
                               name="fname"
                               placeholder="First Name"
+                              required
                             />
                             <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
                               <svg
@@ -109,6 +114,7 @@ const Register = () => {
                         <div className="">
                           <div className="relative">
                             <Field
+                              required
                               className="outline-none w-full rounded-lg border-gray-200 p-4 pe-12 text-sm lg:text-base shadow"
                               name="lname"
                               placeholder="Last Name"
@@ -149,6 +155,7 @@ const Register = () => {
                         <div className="">
                           <div className="relative">
                             <Field
+                              required
                               type="email"
                               className="outline-none w-full rounded-lg border-gray-200 p-4 pe-12 text-sm lg:text-base shadow"
                               name="email"
@@ -189,6 +196,7 @@ const Register = () => {
                         <div className="">
                           <div className="relative">
                             <Field
+                              required
                               type="password"
                               className="outline-none w-full rounded-lg border-gray-200 p-4 pe-12 text-sm lg:text-base shadow"
                               name="password"
@@ -233,6 +241,7 @@ const Register = () => {
                         <div className="">
                           <div className="relative">
                             <Field
+                              required
                               type="password"
                               className="outline-none w-full rounded-lg border-gray-200 p-4 pe-12 text-sm lg:text-base shadow"
                               name="conform_password"

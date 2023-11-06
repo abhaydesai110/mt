@@ -73,11 +73,13 @@ const authSlice = createSlice({
       state.user = user ? user : {};
       // localStorage.setItem("user", user ? JSON.stringify(user) : undefined);
     });
-    // builder.addCase(getProfile.fulfilled, (state, action) => {
-    //   let profile = action?.payload?.data?.Data;
-    //   state.profile = profile;
-    //   // localStorage.setItem("user", user ? JSON.stringify(user) : undefined);
-    // });
+    builder.addCase(getProfile.fulfilled, (state, action) => {
+      console.log("action", action);
+      let profile = action?.payload?.data?.Data;
+      state.profile = profile;
+      console.log("state.profile", state.profile);
+      // localStorage.setItem("user", user ? JSON.stringify(user) : undefined);
+    });
     // builder.addCase(forgotPassword.fulfilled, (state, action) => {
     //   state.key = action?.payload?.data?.Data?.key;
     // });
@@ -99,9 +101,7 @@ export const useUser = () => {
   return useMemo(() => ({ user }), [user]);
 };
 
-export const userProfile = () => {
+export const useProfile = () => {
   const profile = useSelector(selectProfile);
-  return useMemo(() => {
-    ({ profile });
-  }, [profile]);
+  return useMemo(() => ({ profile }), [profile]);
 };

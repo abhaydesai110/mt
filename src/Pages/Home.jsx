@@ -1,6 +1,8 @@
 import React from "react";
+import { useUser } from "../Redux/Slices/AuthSlices";
 
 const Home = () => {
+  // const { token } = useUser();
   return (
     <>
       <div id="myDiv" className="main relative bg-[#090E1A]">
